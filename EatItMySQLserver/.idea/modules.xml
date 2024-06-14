@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EatItMySQLserver.iml" filepath="$PROJECT_DIR$/EatItMySQLserver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/EatItMySQLserver.iml" filepath="$PROJECT_DIR$/.idea/modules/EatItMySQLserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/EatItMySQLserver.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/EatItMySQLserver.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/EatItMySQLserver.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/EatItMySQLserver.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/EatItMySQLserver.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/EatItMySQLserver.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/EatItMySQLserver.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/EatItMySQLserver.app.unitTest.iml" />
     </modules>
   </component>
 </project>

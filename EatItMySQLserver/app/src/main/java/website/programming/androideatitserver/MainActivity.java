@@ -8,10 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 import website.programming.androideatitserver.Model.Category;
 import website.programming.androideatitserver.ViewHolder.MenuViewHolder;
 
@@ -20,10 +16,6 @@ public class MainActivity extends AppCompatActivity {
     Button btnSignIn;
     TextView txtSlogan;
 
-    //FirebaseDatabase database;
-    //DatabaseReference categories;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
         btnSignIn = (Button)findViewById(R.id.btnSignin);
         txtSlogan = (TextView)findViewById(R.id.txtSlogan);
-
-        //Init Firebase
-        //database = FirebaseDatabase.getInstance();
-        //categories = database.getReference("Category");
 
 
         Typeface face = Typeface.createFromAsset(getAssets(),"fonts/NABILA.TTF");

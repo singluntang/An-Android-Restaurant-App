@@ -11,11 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.List;
@@ -48,9 +43,6 @@ public class SignIn extends AppCompatActivity {
         edtPhone = (MaterialEditText)findViewById(R.id.edtPhone);
         edtPassword = (MaterialEditText)findViewById(R.id.edtPassword);
         btnSignIn = (Button)findViewById(R.id.btnSignIn);
-
-        //db = FirebaseDatabase.getInstance();
-        //users = db.getReference("User");
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override

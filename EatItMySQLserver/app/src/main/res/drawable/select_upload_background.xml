@@ -6,8 +6,8 @@ android:color="@color/rippleEffectColor"
 tools:targetApi="lollipop">
 <item>
     <shape android:shape="rectangle">
-        <solid android:color="@color/colorPrimary"></solid>
-        <stroke android:color="@color/colorPrimary"></stroke>
+        <solid android:color="@color/colorPrimary" />
+        <stroke android:color="@color/colorPrimary" />
         <corners android:radius="5dp"/>
     </shape>
 </item>

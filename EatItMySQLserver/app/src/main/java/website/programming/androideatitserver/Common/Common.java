@@ -10,10 +10,6 @@ import android.net.NetworkInfo;
 
 import website.programming.androideatitserver.Model.Request;
 import website.programming.androideatitserver.Model.User;
-import website.programming.androideatitserver.Remote.APIService;
-import website.programming.androideatitserver.Remote.FCMRetrofitClient;
-import website.programming.androideatitserver.Remote.IGeoCoordinates;
-import website.programming.androideatitserver.Remote.RetrofitClient;
 
 /**
  * Created by cokel on 2/27/2018.
@@ -24,7 +20,7 @@ public class Common {
     public static Request currentRequest;
     //public static final String SERVER_URL = "http://wineofthenight.000webhostapp.com/EatIt/";
     //public static final String SERVER_URL = "http://programming.website/EatIt/";
-    public static final String SERVER_URL = "http://wineofthenight.000webhostapp.com/EatIt/";
+    public static final String SERVER_URL = "http://127.0.0.1/EatIt_RestAPI/";
 
     public static final String UPDATE = "Update";
     public static final String DELETE = "Delete";
@@ -43,14 +39,6 @@ public class Common {
             return "On my way";
         else
             return "Shipped";
-    }
-
-    public static APIService getFCMService(){
-        return FCMRetrofitClient.getClient(fcmUrl).create(APIService.class);
-    }
-
-    public static IGeoCoordinates getGeoCodeService(){
-        return RetrofitClient.getClient(baseUrl).create(IGeoCoordinates.class);
     }
 
     public static Bitmap scaleBitmap(Bitmap bitmap, int newWidth, int newHeight)
