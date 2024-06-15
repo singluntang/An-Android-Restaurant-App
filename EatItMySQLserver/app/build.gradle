@@ -66,6 +66,8 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.0.0' // where 1.x.x is the version number
     implementation 'androidx.cardview:cardview:1.0.0' // where 1.x.x is the version number
+    implementation 'androidx.core:core:1.7.0' // Use the latest version available
+
 
 }
 
