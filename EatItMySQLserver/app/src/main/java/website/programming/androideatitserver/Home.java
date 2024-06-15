@@ -7,13 +7,22 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.view.menu.MenuAdapter;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+//import android.support.annotation.NonNull;
+//import android.support.design.widget.FloatingActionButton;
+//import android.support.design.widget.Snackbar;
+//import android.support.v7.app.AlertDialog;
+//import android.support.v7.view.menu.MenuAdapter;
+//import android.support.v7.widget.LinearLayoutManager;
+
+import androidx.annotation.NonNull;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.appcompat.view.menu.MenuAdapter;
+
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,20 +39,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
@@ -131,16 +128,16 @@ public class Home extends AppCompatActivity
         loadMenu();
         //createId();
 
-        updateToken(FirebaseInstanceId.getInstance().getToken());
+//        updateToken(FirebaseInstanceId.getInstance().getToken());
 
     }
 
-    private void updateToken(String token) {
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-        DatabaseReference tokens = db.getReference("Tokens");
-        Token data = new Token(token,true);//false because this token send from client app
-        tokens.child(Common.currentUser.getPhone()).setValue(data);
-    }
+//    private void updateToken(String token) {
+//        FirebaseDatabase db = FirebaseDatabase.getInstance();
+//        DatabaseReference tokens = db.getReference("Tokens");
+//        Token data = new Token(token,true);//false because this token send from client app
+//        tokens.child(Common.currentUser.getPhone()).setValue(data);
+//    }
 
    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

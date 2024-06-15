@@ -1,7 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
-    
     repositories {
         maven {
             url 'https://maven.google.com/'
@@ -11,12 +9,12 @@ buildscript {
             url 'https://repo1.maven.org/maven2/'
             name 'mavencentral'
         }
-        //google()
+//        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.5.0'
-        classpath 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10'
-        classpath 'com.google.gms:google-services:4.4.2'
+        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath 'org.jetbrains.kotlin:kotlin-stdlib:1.2.21'
+        classpath 'com.google.gms:google-services:4.3.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -24,20 +22,20 @@ buildscript {
 }
 
 allprojects {
+
     repositories {
         maven {
-            url 'https://jcenter.bintray.com/'
-            name 'jcenter'
-        }
-        maven {
-            url 'https://repo.spring.io/libs-release'
-            name 'spring-releases'
+            url 'https://maven.google.com/'
+            name 'Google'
         }
         maven {
             url 'https://repo1.maven.org/maven2/'
             name 'mavencentral'
         }
-        google()
+        maven {
+            url 'https://jcenter.bintray.com/'
+            name 'jcenter'
+        }
     }
 }
 

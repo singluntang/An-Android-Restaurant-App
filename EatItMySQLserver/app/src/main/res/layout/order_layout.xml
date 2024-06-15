@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<androidx.cardview.widget.CardView
 xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:layout_width="match_parent"
@@ -28,41 +28,45 @@ app:cardElevation="4dp"
 
             <TextView
                 android:id="@+id/order_id"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/font_family"
                 android:gravity="center_vertical|start"
                 android:textAllCaps="true"
                 android:textStyle="bold"
-                android:text="#111111"
+                android:textColor="#111111"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/order_status"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/font_family"
                 android:gravity="center_vertical|start"
                 android:textAllCaps="true"
                 android:textStyle="italic"
-                android:text="Status"
+                android:text="@string/status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/order_phone"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/font_family"
                 android:gravity="center_vertical|start"
                 android:textAllCaps="true"
                 android:textStyle="italic"
-                android:text="12345678"
+                android:text="@string/phonenumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/order_address"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/font_family"
                 android:gravity="center_vertical|start"
                 android:textAllCaps="true"
                 android:textStyle="italic"
-                android:text="Address"
+                android:text="@string/address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -71,46 +75,46 @@ app:cardElevation="4dp"
             android:orientation="horizontal"
             android:layout_weight="4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp">
 
-            <info.hoang8f.widget.FButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnEdit"
-                android:text="Edit"
+                android:contentDescription="TODO"
+                android:text="@string/edit"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:cornerRadius="0dp"
-                app:fButtonColor="@android:color/white"
+                android:elevation="4dp"
                 />
 
-            <info.hoang8f.widget.FButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnRemove"
-                android:text="Remove"
+                android:contentDescription="TODO"
+                android:text="@string/remove"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:cornerRadius="0dp"
-                app:fButtonColor="@android:color/white"
+                android:elevation="4dp"
                 />
 
-            <info.hoang8f.widget.FButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnDetail"
-                android:text="Detail"
+                android:contentDescription="TODO"
+                android:text="@string/detail"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:cornerRadius="0dp"
-                app:fButtonColor="@android:color/white"
+                android:elevation="4dp"
                 />
 
-            <info.hoang8f.widget.FButton
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnDirection"
-                android:text="Direction"
+                android:contentDescription="TODO"
+                android:text="@string/direction"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:cornerRadius="0dp"
-                app:fButtonColor="@android:color/white"
+                android:elevation="4dp"
                 />
         </LinearLayout>
 
@@ -124,4 +128,4 @@ app:cardElevation="4dp"
 
 
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

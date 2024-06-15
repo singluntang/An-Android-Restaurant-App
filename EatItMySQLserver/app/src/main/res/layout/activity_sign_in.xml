@@ -19,9 +19,9 @@
             android:id="@+id/edtPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Phone Number"
+            android:hint="@string/phonenumber"
             android:inputType="phone"
-            android:text="64960648"
+            android:text="@string/phone"
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white"
             android:textSize="34sp"
@@ -33,11 +33,11 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/edtPassword"
-            android:hint="Password"
+            android:hint="@string/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@android:color/white"
-            android:text="1234"
+            android:text="@string/passwordNum"
             android:textColor="@android:color/white"
             android:textSize="34sp"
             android:inputType="textPassword"
@@ -63,21 +63,18 @@
         android:layout_weight="1"
         android:layout_height="wrap_content" /> -->
 
-    <info.hoang8f.widget.FButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnSignIn"
+        android:contentDescription="TODO"
         android:textColor="@android:color/darker_gray"
-        android:text="SIGN IN"
+        android:text="@string/sign_in"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:fButtonColor="@android:color/white"
-        app:shadowColor="@android:color/black"
         android:layout_alignParentBottom="true"
-        app:shadowEnabled="true"
-        app:shadowHeight="5dp"
-        app:cornerRadius="4dp"/>
+        android:elevation="4dp"/>
 
 
 

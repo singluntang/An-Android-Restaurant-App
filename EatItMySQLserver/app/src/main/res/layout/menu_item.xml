@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
+<androidx.cardview.widget.CardView
 xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:orientation="vertical"
@@ -20,7 +20,8 @@ app:cardElevation="4dp">
 
     <TextView
         android:id="@+id/menu_name"
-        android:text="Name of Menu"
+        android:text="@string/nameofmenu"
+        android:fontFamily="@font/font_family"
         android:textColor="@android:color/white"
         android:background="#4f0e0d0e"
         android:textSize="20sp"
@@ -32,4 +33,4 @@ app:cardElevation="4dp">
 
 </RelativeLayout>
 
-</android.support.v7.widget.CardView>
+</androidx.cardview.widget.CardView>

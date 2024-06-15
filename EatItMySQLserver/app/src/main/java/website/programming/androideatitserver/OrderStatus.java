@@ -2,25 +2,27 @@ package website.programming.androideatitserver;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v4.widget.SwipeRefreshLayout;
+//import android.support.v7.app.AlertDialog;
+//import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+//import android.support.v7.widget.LinearLayoutManager;
+//import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
 import com.jaredrummler.materialspinner.MaterialSpinner;
 
 import java.util.ArrayList;
@@ -51,14 +53,14 @@ import website.programming.androideatitserver.ViewHolder.OrderViewHolder;
 
 public class OrderStatus extends AppCompatActivity {
 
-    FirebaseDatabase database;
+//    FirebaseDatabase database;
     DatabaseReference requests;
 
     RecyclerView recylerview;
     RecyclerView.LayoutManager layoutManager;
 
     String CatergoryId = "";
-    FirebaseRecyclerAdapter<Request, OrderViewHolder> adapter;
+//    FirebaseRecyclerAdapter<Request, OrderViewHolder> adapter;
 
     SwipeRefreshLayout swipeRefreshLayout;
 
@@ -79,8 +81,8 @@ public class OrderStatus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_status);
 
-        database = FirebaseDatabase.getInstance();
-        requests = database.getReference("Requests");
+//        database = FirebaseDatabase.getInstance();
+//        requests = database.getReference("Requests");
 
         //Init
         mService = Common.getFCMService();

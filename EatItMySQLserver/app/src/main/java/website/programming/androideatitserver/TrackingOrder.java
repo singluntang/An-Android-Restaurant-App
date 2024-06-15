@@ -9,10 +9,18 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.AsyncTask;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
+//import android.support.annotation.NonNull;
+//import android.support.annotation.Nullable;
+//import android.support.v4.app.ActivityCompat;
+//import android.support.v4.app.FragmentActivity;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentActivity;
+
+
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -47,7 +55,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import website.programming.androideatitserver.Common.Common;
 import website.programming.androideatitserver.Common.DirectionJSONParser;
-import website.programming.androideatitserver.Remote.IGeoCoordinates;
+//import website.programming.androideatitserver.Remote.IGeoCoordinates;
 
 public class TrackingOrder extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
@@ -67,7 +75,7 @@ public class TrackingOrder extends FragmentActivity implements OnMapReadyCallbac
     private static int FASTEST_INTERVAL=5000;
     private static int DISPLACEMENT=10;
 
-    private IGeoCoordinates mService;
+//    private IGeoCoordinates mService;
 
     private Marker mMapMarker;
 
@@ -76,7 +84,7 @@ public class TrackingOrder extends FragmentActivity implements OnMapReadyCallbac
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracking_order);
 
-        mService = Common.getGeoCodeService();
+//        mService = Common.getGeoCodeService();
 
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
@@ -130,7 +138,7 @@ public class TrackingOrder extends FragmentActivity implements OnMapReadyCallbac
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude,longitude),17.0f));
 
                 //After add Marker for your location, Add Marker for this Order and draw route
-                drawRoute(yourLocation,Common.currentRequest.getAddress());
+//                drawRoute(yourLocation,Common.currentRequest.getAddress());
 
             }
             else {
@@ -140,71 +148,71 @@ public class TrackingOrder extends FragmentActivity implements OnMapReadyCallbac
 
     }
 
-    private void drawRoute(final LatLng yourLocation, String address) {
-        mService.getGeoCode(address).enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response.body().toString());
-                    Log.i("Route",jsonObject.toString());
-                    String lat = ((JSONArray)jsonObject.get("results"))
-                            .getJSONObject(0)
-                            .getJSONObject(("geometry"))
-                            .getJSONObject("location")
-                            .get("lat").toString();
-
-                    String lng = ((JSONArray)jsonObject.get("results"))
-                            .getJSONObject(0)
-                            .getJSONObject(("geometry"))
-                            .getJSONObject("location")
-                            .get("lng").toString();
-
-                    LatLng orderLocation = new LatLng(Double.parseDouble(lat),Double.parseDouble(lng));
-
-                    Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.person);
-                    bitmap = Common.scaleBitmap(bitmap,70,70);
-
-                    MarkerOptions marker = new MarkerOptions().icon(BitmapDescriptorFactory.fromBitmap(bitmap))
-                            .title("Order of " + Common.currentRequest.getPhone())
-                            .position(orderLocation);
-                    mMap.addMarker(marker);
-                    //mService.getDirections(yourLocation.latitude+","+yourLocation.longitude,
-                    //        orderLocation.latitude + "," + orderLocation.longitude)
-
-                    //String requestApi= "https://maps.googleapis.com/maps/api/directions/json?mode=driving&transit_routing_preference=less_driving&origin=22.3450167,114.1933017&destination=Chuk+Un,+Hong+Kong&key="+getResources().getString(R.string.google_maps_key);
-                    //Draw Route
-                    mService.getDirections(yourLocation.latitude+","+yourLocation.longitude,
-                            orderLocation.latitude + "," + orderLocation.longitude)
-                            .enqueue(new Callback<String>() {
-                                @Override
-                                public void onResponse(Call<String> call, Response<String> response) {
-                                    new ParseTask().execute(response.body().toString());
-                                    Log.i("Get Direction : ", response.body().toString());
-                                }
-
-                                @Override
-                                public void onFailure(Call<String> call, Throwable t) {
-                                    Log.i("Get Direction : ", "Failure: " + call.toString() );
-                                }
-                            });
-
-
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-
-            }
-        });
-
-
-    }
+//    private void drawRoute(final LatLng yourLocation, String address) {
+//        mService.getGeoCode(address).enqueue(new Callback<String>() {
+//            @Override
+//            public void onResponse(Call<String> call, Response<String> response) {
+//                try {
+//                    JSONObject jsonObject = new JSONObject(response.body().toString());
+//                    Log.i("Route",jsonObject.toString());
+//                    String lat = ((JSONArray)jsonObject.get("results"))
+//                            .getJSONObject(0)
+//                            .getJSONObject(("geometry"))
+//                            .getJSONObject("location")
+//                            .get("lat").toString();
+//
+//                    String lng = ((JSONArray)jsonObject.get("results"))
+//                            .getJSONObject(0)
+//                            .getJSONObject(("geometry"))
+//                            .getJSONObject("location")
+//                            .get("lng").toString();
+//
+//                    LatLng orderLocation = new LatLng(Double.parseDouble(lat),Double.parseDouble(lng));
+//
+//                    Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.person);
+//                    bitmap = Common.scaleBitmap(bitmap,70,70);
+//
+//                    MarkerOptions marker = new MarkerOptions().icon(BitmapDescriptorFactory.fromBitmap(bitmap))
+//                            .title("Order of " + Common.currentRequest.getPhone())
+//                            .position(orderLocation);
+//                    mMap.addMarker(marker);
+//                    //mService.getDirections(yourLocation.latitude+","+yourLocation.longitude,
+//                    //        orderLocation.latitude + "," + orderLocation.longitude)
+//
+//                    //String requestApi= "https://maps.googleapis.com/maps/api/directions/json?mode=driving&transit_routing_preference=less_driving&origin=22.3450167,114.1933017&destination=Chuk+Un,+Hong+Kong&key="+getResources().getString(R.string.google_maps_key);
+//                    //Draw Route
+//                    mService.getDirections(yourLocation.latitude+","+yourLocation.longitude,
+//                            orderLocation.latitude + "," + orderLocation.longitude)
+//                            .enqueue(new Callback<String>() {
+//                                @Override
+//                                public void onResponse(Call<String> call, Response<String> response) {
+//                                    new ParseTask().execute(response.body().toString());
+//                                    Log.i("Get Direction : ", response.body().toString());
+//                                }
+//
+//                                @Override
+//                                public void onFailure(Call<String> call, Throwable t) {
+//                                    Log.i("Get Direction : ", "Failure: " + call.toString() );
+//                                }
+//                            });
+//
+//
+//
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<String> call, Throwable t) {
+//
+//            }
+//        });
+//
+//
+//    }
 
     private void createLocationRequest() {
         mLocationRequest = new LocationRequest();
